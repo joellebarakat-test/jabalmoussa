@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jabal Moussa Entrance Form</title>
+  <style>
+    :root{--bg:#0b1220;--card:#121b2e;--muted:#8aa0c2;--text:#e9f1ff;--line:#223253;--ok:#20c997;--bad:#ff6b6b;}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#070b14, #0b1220 40%, #070b14);color:var(--text);}
+    .wrap{max-width:860px;margin:0 auto;padding:18px;}
+    /* Banner hidden (no header banner) */
+    .grid{display:grid;grid-template-columns:1fr;gap:12px;}
+    @media(min-width:860px){.grid{grid-template-columns:1.15fr .85fr;}}
+    .card{background:rgba(18,27,46,.92);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);}
+    .card .pad{padding:14px;}
+    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px;}
+    input,select,textarea{width:100%;box-sizing:border-box;background:#0d1528;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;outline:none;}
+    .row{display:grid;grid-template-columns:1fr;gap:10px;}
+    @media(min-width:540px){.row{grid-template-columns:1fr 1fr;}}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    button{border:0;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer;}
+    .primary{background:#2d6cff;color:white;}
+    .ghost{background:transparent;border:1px solid var(--line);color:var(--text);}
+    .danger{background:transparent;border:1px solid rgba(255,107,107,.6);color:#ffd1d1;}
+    .total{font-size:30px;font-weight:800;letter-spacing:.2px;margin:4px 0 0;}
+    .muted{color:var(--muted);font-size:12px;line-height:1.35;}
+    .line{border-top:1px solid var(--line);margin:12px 0;}
+    .ok{color:var(--ok);} .bad{color:var(--bad);} 
+    .receipt{background:#0d1528;border:1px dashed #2b3f68;border-radius:14px;padding:12px;margin-top:10px;}
+    .kv{display:flex;justify-content:space-between;gap:10px;margin:6px 0;font-size:13px;}
+    .kv b{font-weight:700;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <!-- Form -->
+      <section class="card">
+        <div class="pad">
+          <div class="row">
+            <div>
+              <label for="name">Name - الاسم</label>
+              <input id="name" placeholder="Full name" autocomplete="name" />
+            </div>
+            <div>
+              <label for="email">Email - البريد الالكتروني</label>
+              <input id="email" placeholder="name@example.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="phone">Phone number - رقم الهاتف</label>
+              <input id="phone" placeholder="+961… / +357…" autocomplete="tel" />
+            </div>
+            <div>
+              <label for="nationality">Nationality - الجنسية</label>
+              <select id="nationality">
+                <option value="Lebanese">Lebanese - لبنانية</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="nationalityOther" id="natOtherLabel" style="display:none;">Other:</label>
+          <input id="nationalityOther" placeholder="Please specify" style="display:none;" />
+
+          <div class="line"></div>
+
+          <div class="row">
+            <div>
+              <label for="paidAbove16">How many paid visitors above 16 years - كم زائر أكبر من 16 سنة</label>
+              <input id="paidAbove16" type="number" min="0" step="1" value="0" />
+            </div>
+            <div>
+              <label for="paidUnder16">How many paid visitors under 16 years - كم زائر أصغر من 16 سنة</label>
+              <input id="paidUnder16" type="number" min="0" step="1" value="0" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="freeAbove16">How many free visitors above 16 years</label>
+              <input id="freeAbove16" type="number" min="0" step="1" value="0" />
+            </div>
+            <div>
+              <label for="freeUnder16">How many free visitors under 16 years</label>
+              <input id="freeUnder16" type="number" min="0" step="1" value="0" />
+            </div>
+          </div>
+
+          <div class="line"></div>
+
+          <label for="trail">Trail number - رقم المسار</label>
+          <select id="trail">
+            <option value="">Select…</option>
+            <option value="Trail 11">Trail 11 - Cultural trail (1.4km) / Easy</option>
+            <option value="Trail 12">Trail 12 - Lake trail (1.8km) / Moderate</option>
+            <option value="Trail 13">Trail 13 - Arbutus trail (2.1km) / Difficult</option>
+            <option value="Trail 1">Trail 1 - Peony trail (2.1km) / Easy+</option>
+            <option value="Trail 2">Trail 2 - Qornet El Mzar trail (3.3km) / Moderate</option>
+            <option value="Trail 3">Trail 3 - El Byut stroll (3.5km) / Moderate</option>
+            <option value="Trail 4">Trail 4 - The Roman Stairs (2.3km) / Easy</option>
+            <option value="Trail 5">Trail 5 - Qornet El Deir loop (2.0km) / Easy+</option>
+            <option value="Trail 6">Trail 6 - Hadrian's Incline trail (1.6km) / Difficult</option>
+            <option value="Trail 7">Trail 7 - Cerris trail (3.3km) / Difficult</option>
+            <option value="Trail 8">Trail 8 - Shepherds Encounter trail (2.5km) / Moderate</option>
+            <option value="Trail 9">Trail 9 - Charme Houblon trail (1.8km) / Difficult</option>
+            <option value="Trail 10">Trail 10 - El-Jalseh trail (4.8km) / Moderate</option>
+            <option value="Trail 14">Trail 14 - Adonis Gorge trail (2.1km) / Difficult</option>
+            <option value="Trail 15">Trail 15 - Violets trail (2.1km) / Easy+</option>
+            <option value="Full loop">Full loop (19.5km) / Difficult</option>
+          </select>
+
+          <div class="btns">
+            <button class="primary" id="submitBtn">Save to Sheet</button>
+            <button class="ghost" id="printBtn" type="button">Print receipt</button>
+            <button class="danger" id="resetBtn" type="button">Reset</button>
+          </div>
+
+          <div class="muted" style="margin-top:10px;">
+            Banner hidden. Minimal form fields as requested.
+          </div>
+        </div>
+      </section>
+
+      <!-- Totals / Receipt -->
+      <aside class="card">
+        <div class="pad">
+          <div class="muted">Calculated total</div>
+          <div class="total" id="total">0</div>
+          <div class="muted" id="breakdown">—</div>
+
+          <div class="receipt" id="receipt">
+            <div class="kv"><span>Date/time</span><b id="r_dt">—</b></div>
+            <div class="kv"><span>Name</span><b id="r_name">—</b></div>
+            <div class="kv"><span>Nationality</span><b id="r_nat">—</b></div>
+            <div class="kv"><span>Trail</span><b id="r_trail">—</b></div>
+            <div class="kv"><span>Visitors</span><b id="r_vis">—</b></div>
+            <div class="line"></div>
+            <div class="kv" style="font-size:16px;"><span>Total</span><b id="r_total">0</b></div>
+            <div class="muted" style="font-size:12px;">Informational only. Official cash receipt as per APJM procedures.</div>
+          </div>
+
+          <div class="line"></div>
+          <div class="muted" id="status">Not saved yet.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+<script>
+  // Paste your Google Apps Script Web App URL here
+  const APPS_SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+
+  // Pricing (edit to match APJM policy)
+  // Lebanese: in LBP. Other: in USD. If you want conversion, add exchange rate logic.
+  const PRICES = {
+    Lebanese: { currency: "LBP", paidAbove16: 250000, paidUnder16: 150000 },
+    Other: { currency: "USD", paidAbove16: 8, paidUnder16: 4 },
+  };
+
+  const $ = (id) => document.getElementById(id);
+
+  function nowLocal() { return new Date(); }
+
+  function fmtMoney(amount, currency) {
+    if (currency === "LBP") return new Intl.NumberFormat("en", { maximumFractionDigits: 0 }).format(amount) + " LBP";
+    if (currency === "USD") return "$" + new Intl.NumberFormat("en", { maximumFractionDigits: 2 }).format(amount);
+    return amount + " " + currency;
+  }
+
+  function getForm() {
+    const nat = $("nationality").value;
+    const natOther = $("nationalityOther").value.trim();
+    return {
+      datetime: nowLocal().toISOString(),
+      name: $("name").value.trim(),
+      email: $("email").value.trim(),
+      phone: $("phone").value.trim(),
+      nationality: nat,
+      nationalityOther: nat === "Other" ? natOther : "",
+      paidAbove16: Number($("paidAbove16").value || 0),
+      paidUnder16: Number($("paidUnder16").value || 0),
+      freeAbove16: Number($("freeAbove16").value || 0),
+      freeUnder16: Number($("freeUnder16").value || 0),
+      trail: $("trail").value,
+    };
+  }
+
+  function computeTotal(data) {
+    const rule = PRICES[data.nationality] || PRICES.Lebanese;
+    const currency = rule.currency;
+
+    const total = (data.paidAbove16 * rule.paidAbove16) + (data.paidUnder16 * rule.paidUnder16);
+
+    return {
+      currency,
+      total,
+      line1: `Paid >16: ${data.paidAbove16} × ${fmtMoney(rule.paidAbove16, currency)}`,
+      line2: `Paid <16: ${data.paidUnder16} × ${fmtMoney(rule.paidUnder16, currency)}`,
+      free: `Free visitors: ${data.freeAbove16 + data.freeUnder16} (>${data.freeAbove16}, <${data.freeUnder16})`,
+    };
+  }
+
+  function refreshNationalityOther() {
+    const isOther = $("nationality").value === "Other";
+    $("natOtherLabel").style.display = isOther ? "block" : "none";
+    $("nationalityOther").style.display = isOther ? "block" : "none";
+  }
+
+  function refreshUI() {
+    refreshNationalityOther();
+
+    const data = getForm();
+    const b = computeTotal(data);
+
+    $("total").textContent = fmtMoney(b.total, b.currency);
+    $("breakdown").innerHTML = [b.line1, b.line2, b.free].join("<br>");
+
+    const dt = nowLocal();
+    $("r_dt").textContent = dt.toLocaleString();
+    $("r_name").textContent = data.name || "—";
+    const natTxt = data.nationality === "Other" ? (data.nationalityOther || "Other") : "Lebanese";
+    $("r_nat").textContent = natTxt;
+    $("r_trail").textContent = data.trail || "—";
+    const totalVisitors = data.paidAbove16 + data.paidUnder16 + data.freeAbove16 + data.freeUnder16;
+    $("r_vis").textContent = `${totalVisitors} (Paid: ${data.paidAbove16 + data.paidUnder16}, Free: ${data.freeAbove16 + data.freeUnder16})`;
+    $("r_total").textContent = fmtMoney(b.total, b.currency);
+  }
+
+  function setStatus(msg, kind) {
+    const el = $("status");
+    el.textContent = msg;
+    el.classList.remove("ok","bad");
+    if (kind) el.classList.add(kind);
+  }
+
+  async function submit() {
+    const data = getForm();
+    const b = computeTotal(data);
+
+    if (!data.name) { setStatus("Please enter Name - الاسم", "bad"); $("name").focus(); return; }
+    if (!data.trail) { setStatus("Please select Trail number - رقم المسار", "bad"); $("trail").focus(); return; }
+
+    const paidCount = data.paidAbove16 + data.paidUnder16;
+    if (paidCount <= 0 && (data.freeAbove16 + data.freeUnder16) <= 0) {
+      setStatus("Please enter number of visitors.", "bad");
+      $("paidAbove16").focus();
+      return;
+    }
+
+    if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.includes("PASTE_YOUR_WEB_APP_URL_HERE")) {
+      setStatus("Missing Apps Script URL. Paste it in the code first.", "bad");
+      return;
+    }
+
+    setStatus("Saving…", "");
+
+    const payload = {
+      ...data,
+      fee_currency: b.currency,
+      fee_total: b.total,
+    };
+
+    try {
+      const res = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const out = await res.json();
+
+      if (out && out.ok) setStatus("Saved ✓", "ok");
+      else setStatus("Saved, but response was unexpected.", "bad");
+
+    } catch (e) {
+      setStatus("Save failed. Check internet / Apps Script deployment / permissions.", "bad");
+      console.error(e);
+    }
+  }
+
+  function resetForm() {
+    ["name","email","phone","nationalityOther"].forEach(id => $(id).value = "");
+    ["paidAbove16","paidUnder16","freeAbove16","freeUnder16"].forEach(id => $(id).value = 0);
+    $("nationality").value = "Lebanese";
+    $("trail").value = "";
+    setStatus("Not saved yet.", "");
+    refreshUI();
+  }
+
+  function printReceipt() { window.print(); }
+
+  // Events
+  ["name","email","phone","nationality","nationalityOther","paidAbove16","paidUnder16","freeAbove16","freeUnder16","trail"].forEach(id => {
+    const el = $(id);
+    el.addEventListener("input", refreshUI);
+    el.addEventListener("change", refreshUI);
+  });
+
+  $("submitBtn").addEventListener("click", (e) => { e.preventDefault(); submit(); });
+  $("resetBtn").addEventListener("click", (e) => { e.preventDefault(); resetForm(); });
+  $("printBtn").addEventListener("click", (e) => { e.preventDefault(); printReceipt(); });
+
+  // init
+  refreshUI();
+</script>
+</body>
+</html>
